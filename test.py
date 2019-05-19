@@ -8,7 +8,7 @@ if __name__ == '__main__':
     BEGIN = time.time()
     for i in range(NUM_TRAILS):
         seed(i)
-        test_preorder_traversal_v4(num_node=5)
+        test_preorder_traversal_v4(num_node=20000)
     END = time.time()
     DURATION = END - BEGIN
     print "Cython C-lib finishes in {} seconds - {} s/run".format(DURATION, DURATION / NUM_TRAILS)

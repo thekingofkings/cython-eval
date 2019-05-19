@@ -13,35 +13,28 @@ Node *node_new(int val) {
     p->val = val;
     p->left = NULL;
     p->right = NULL;
-    printf("cNode %d\n", val);
     return p;
 }
 
 void node_free(Node *node) {
     if (node != NULL) {
-        printf("Free node %d\n", node->val);
         free(node);
         node = NULL;
     }
 }
 
 void set_left(Node *node, Node *left) {
-    printf("set left: %d -> %d\n", node->val, left->val);
     node->left = left;
 }
 
 void set_right(Node *node, Node *right) {
-    printf("set right: %d -> %d\n", node->val, right->val);
     node->right = right;
 }
 
 int preorder_traversal(Node *node, int result[], int i) {
-    printf("Fill result array position %d ", i);
     if (node == NULL) {
-        printf(" empty node. abort with next index %d\n", i);
         return i;
     }
-    printf("with value %d\n", node->val);
     result[i] = node->val;
     i += 1;
     int j = preorder_traversal(node->left, result, i);

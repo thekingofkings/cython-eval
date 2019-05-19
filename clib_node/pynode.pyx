@@ -6,11 +6,11 @@ from random import random
 
 cdef class Node:
     cdef cnode.Node* _c_node
+    cdef Node left, right
 
     def __cinit__(self, int val=0, Node left=None, Node right=None):
         self._c_node = cnode.node_new(val)
         if self._c_node is NULL:
-            print "memory error: cannot create new cNode"
             raise MemoryError()
         if left is not None:
             self.set_left(left)
@@ -22,9 +22,11 @@ cdef class Node:
             cnode.node_free(self._c_node)
 
     def set_left(self, Node child):
+        self.left = child
         cnode.set_left(self._c_node, child._c_node)
 
     def set_right(self, Node child):
+        self.right = child
         cnode.set_right(self._c_node, child._c_node)
 
     @classmethod
