@@ -69,7 +69,7 @@ if __name__ == '__main__':
     NUM_TREES = 10
     BEGIN = time()
     for i in range(NUM_TREES):
-        Node.generate_random_tree(100000, 0.8)
+        test_preorder_traversal(100000, 0.8)
     END = time()
-    print "Tree generation speed {} seconds / tree".format(
+    print "Tree generation/traversal speed {} seconds / tree".format(
         (END - BEGIN) / NUM_TREES)

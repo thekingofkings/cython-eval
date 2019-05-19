@@ -14,7 +14,7 @@ cdef class Node:
         self.right = right
 
     @classmethod
-    def preorder_traversal(cls, root, res):
+    def preorder_traversal(cls, Node root, res):
         """Pre-order traversal of a tree at root node."""
         if root is None:
             return
@@ -43,7 +43,7 @@ cdef class Node:
         return root
 
     @classmethod
-    def pretty_print(cls, root, indent, last):
+    def pretty_print(cls, Node root, indent, last):
         """Pretty print a binary tree
 
         Keyword arguments:
