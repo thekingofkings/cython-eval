@@ -15,24 +15,21 @@ Implementations
 We compare the following four implementations.
 
 
-Pure Python Source
-~~~~~~~~~~~~~~~~~~
+### Pure Python Source
 This is the baseline method without using Cython. It is implemented inside `pysrc` folder.
 
 
-Pure Python Source Compiled with Cython
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Pure Python Source Compiled with Cython
 Directly change the python source above into `pyx` file, and use Cython to compile into binary executable. It is implemented in the `pysrc_as_pyx` folder.
 
 
-Cython with Static Typing
-~~~~~~~~~~~~~~~~~~~~~~~~~
+### Cython with Static Typing
 Use static typing in the Cython `Node` class. The `cdef class Node` will be automatically compiled as a C `struct`. Implemented in `pysrc_static_typing`.
 
 
 
-External C library
-~~~~~~~~~~~~~~~~~~
+### External C library
+
 Implement `struct Node` in a C file. Use Cython to create a pynode wrapper, so that we can use this C struct inside python code. Implemented in `clib_node`.
 
 
